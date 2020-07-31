@@ -19,11 +19,16 @@ const depositBtn = document.getElementById('deposit').addEventListener('click',f
     const depositAmount = parseFloat(document.getElementById('depositAmount').innerText);
     const total         = (dAmount + depositAmount).toFixed(2);
     const balanceAmount = parseFloat(document.getElementById('balanceAmount').innerText);
-    const totalBalance  = parseFloat(dAmount + balanceAmount);
-    document.getElementById('depositAmount').innerText = total;
-    document.getElementById('balanceAmount').innerText = totalBalance;
-    document.getElementById('deposit-warning').style.display = 'block';
-    document.getElementById('deposit-msg').innerText = "Successfully deposit $"+ dAmount;
+    const totalBalance  = (parseFloat(dAmount + balanceAmount)).toFixed(2);
+    if(!dAmount){
+        document.getElementById('deposit-warning').style.display = 'block';
+        document.getElementById('deposit-msg').innerText = "Please, Input an Amount";
+    }else{
+        document.getElementById('depositAmount').innerText = total;
+        document.getElementById('balanceAmount').innerText = totalBalance;
+        document.getElementById('deposit-warning').style.display = 'block';
+        document.getElementById('deposit-msg').innerText = "Successfully deposit $"+ dAmount;
+    }
     document.getElementById('dAmount').value = "";
 });
 
@@ -36,8 +41,11 @@ const withdrawBtn = document.getElementById('withdraw').addEventListener('click'
     if(wAmount > balanceAmount){
         document.getElementById('withdraw-warning').style.display = 'block';
         document.getElementById('withdraw-msg').innerText = "You can't withdraw more than your Balance Amount";
+    }else if(!wAmount){
+        document.getElementById('withdraw-warning').style.display = 'block';
+        document.getElementById('withdraw-msg').innerText = "Please, Input an Amount";
     }else{
-        const totalBalance   = parseFloat(balanceAmount - wAmount);
+        const totalBalance   = (parseFloat(balanceAmount - wAmount)).toFixed(2);
         document.getElementById('withdrawAmount').innerText = total;
         document.getElementById('balanceAmount').innerText = totalBalance;
         document.getElementById('withdraw-warning').style.display = 'block';
