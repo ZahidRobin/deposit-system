@@ -1,0 +1,65 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+    height: 100%;
+    background-color: #922B21;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    margin: 0 0 15px;
+    font-weight: 700;
+}
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 100px white inset !important;
+}
+#login-area, #transaction-area{
+    padding-top: 100px;
+}
+.deposit-title{
+    color: #fff;
+}
+.login-form{
+    padding: 50px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px #571845;
+}
+#login-warning, #deposit-warning, #withdraw-warning{
+    display: none;
+}
+#transaction-area{
+    display: none;
+    color: #fff;
+}
+.box{
+    margin: 20px 10px;
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+.deposit{
+    background-color: slateblue;
+}
+.withdraw{
+    background-color: lightsalmon;
+}
+.balance{
+    background-color: orange;
+}
+.transaction-box{
+    margin: 0 10px;
+    padding: 50px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px #571845;
+}
